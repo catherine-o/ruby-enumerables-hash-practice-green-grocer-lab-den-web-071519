@@ -74,9 +74,9 @@ def checkout(cart, coupons)
      #binding.pry
       if all_discounts.count == 1 
         all_discounts.each do |product|
-          product.each do |food, food_info|
+          product.each do |food, info|
             binding.pry
-            total = product[food_info][:price]
+            total = product[info][:price]
             
           end
         end
