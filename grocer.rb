@@ -72,11 +72,15 @@ def checkout(cart, coupons)
   coupons_applied = apply_coupons(all_items, coupons)  
   all_discounts = apply_clearance(coupons_applied)
       
-    total = all_discounts.reduce(0) do |memo, (item, item_info)|
-      memo += (item_info[:price] * item_info[:count])
-    end
+  total = all_discounts.reduce(0) do |memo, (item, item_info)|
+    memo += (item_info[:price] * item_info[:count])
+  end
       
-    if total 
+  if total > 100
+    discount = total * 0.10
+    total -= discount
+  end
+  total
 end
  
 
