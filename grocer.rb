@@ -73,10 +73,10 @@ def checkout(cart, coupons)
   all_discounts = apply_clearance(coupons_applied)
      #binding.pry
       if all_discounts.count == 1 
-        all_discounts.each do |product|
-          product.each do |food, info|
+        all_discounts.each do |food, food_info|
+      
             binding.pry
-            total = product[info][:price]
+            total = food_info[:price]
             
           end
         end
