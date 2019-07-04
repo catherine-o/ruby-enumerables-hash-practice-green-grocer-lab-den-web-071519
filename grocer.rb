@@ -71,16 +71,11 @@ def checkout(cart, coupons)
   all_items = consolidate_cart(cart) #item: price, clearance, count
   coupons_applied = apply_coupons(all_items, coupons)  
   all_discounts = apply_clearance(coupons_applied)
-      if all_discounts.count == 1 
-        all_discounts.each do |food, food_info|
-            total = food_info[:price]
-            #binding.pry
-        end
-      else
+      
         total = all_discounts.reduce(0) do |memo, (item, item_info)|
           memo += (item_info[:price] * item_info[:count])
         end
-      end
+      
   total
 end
  
