@@ -77,6 +77,7 @@ def checkout(cart, coupons)
           product.each do |food, food_info|
             total = food_info[:price]
           end
+          binding.pry
         end
       else
         total = all_discounts.reduce(0) do |memo, (item, item_info)|
