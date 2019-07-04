@@ -73,8 +73,8 @@ def checkout(cart, coupons)
   all_discounts = apply_clearance(coupons_applied)
       if all_discounts.count == 1 
         all_discounts.each do |food, food_info|
-            total = food_info[:price] * food_info[:count]
-            
+            total = food_info[:price]
+            #binding.pry
         end
       else
         total = all_discounts.reduce(0) do |memo, (item, item_info)|
