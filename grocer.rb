@@ -75,11 +75,12 @@ def checkout(cart, coupons)
       if all_discounts.keys.count == 1 
         all_discounts.each do |product|
           product.each do |food, food_info|
-            total = product[food_info[:price]]
-            binding.pry
+            total = product[food_info][:price]
+            
           end
         end
       else
+        binding.pry
         total = all_discounts.reduce(0) do |memo, (item, item_info)|
           memo += (item_info[:price] * item_info[:count])
         end
