@@ -81,7 +81,7 @@ def checkout(cart, coupons)
         end
       else
         total = all_discounts.reduce(0) do |memo, (item, item_info)|
-          memo += (item_info[:price]*item_info[:count])
+          memo += (item_info[:price] * item_info[:count])
         end
         #binding.pry
       end
