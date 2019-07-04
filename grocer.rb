@@ -78,7 +78,7 @@ def checkout(cart, coupons)
             binding.pry
             total = food_info[:price]
             
-          end
+          
         end
       else
         #binding.pry
